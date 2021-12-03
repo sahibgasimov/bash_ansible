@@ -14,7 +14,7 @@ b=`tput bold`     # bold
 u=`tput smul`     # underline
 nu=`tput rmul`    # no-underline
 echo "
-[${y}NOTE1${rs}] Please select options below"
+[${y}NOTE${rs}] Please select options below"
 
 echo #
 while true
