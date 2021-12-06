@@ -3,7 +3,8 @@
 # 1  Install ansible, python, java
 # 2. Download and configure ansible dynamic inventory
 # 3. Configure "~/.ssh/config" to "StrictHostKeyChecking no"
-# 4. Run Farrukh's bash script (Terraform/AWS-EC2)
+# 4. Run Farrukh's Bash Script to create Terraform/AWS-EC2
+# 5. Create Ansible Tower
 
 #!/bin/bash
 rs=`tput sgr0`    # reset
@@ -14,15 +15,16 @@ b=`tput bold`     # bold
 u=`tput smul`     # underline
 nu=`tput rmul`    # no-underline
 echo "
-[${y}NOTE${rs}] Please select options below"
+[${y}NOTE${rs}] Once the script is completed enter your AWS ACCESS KEYS into the /opt/ansible/inventory/aws_ec2.yml"
 
 echo #
 while true
 do
     echo "${y}1${rs}. Install ansible and terraform prerequisites "
     echo "${y}2${rs}. Create aws_ec2.yml and ansible.cfg + hostkey_config"
-    echo "${y}3${rs}. Run Farrukh's Bash Script (Terraform/AWS-EC2)"
-    echo "${y}4${rs}. Quit"
+    echo "${y}3${rs}. Run Farrukh's Bash Script to create Terraform/AWS-EC2"
+    echo "${y}4${rs}. Create Ansible Tower"
+    echo "${y}5${rs}. Quit"
     read -p "Enter your choice: " choice
     if [ $choice -eq 1 ]
         # If inventory folder doesn't exist create it
@@ -95,11 +97,16 @@ Host *
 EOF
     elif [ $choice -eq 3 ]
     then
-        bash -c "$(curl https://bucket-to-check-aws-tasks.s3.amazonaws.com/AWS/scripts/shared_scripts/ansible_menu.sh)" 
+        bash -c "$(curl https://bucket-to-check-aws-tasks.s3.amazonaws.com/AWS/scripts/shared_scripts/ansible_menu.sh)"
+    
     elif [ $choice -eq 4 ]
+    then 
+         bash -c "$(curl https://bucket-to-check-aws-tasks.s3.amazonaws.com/AWS/scripts/shared_scripts/ansible_tower_menu.sh)"
+
+    elif [ $choice -eq 5 ]
     then 
          break
      else
          continue
-      fi
+    fi
 done
