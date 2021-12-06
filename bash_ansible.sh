@@ -1,10 +1,13 @@
 # Ansible Script 
 
-# 1  Install ansible, python, java
-# 2. Download and configure ansible dynamic inventory
-# 3. Configure "~/.ssh/config" to "StrictHostKeyChecking no"
-# 4. Run Farrukh's Bash Script to create Terraform/AWS-EC2
-# 5. Create Ansible Tower
+echo "
+    What this script does?:
+ -  Install ansible, python, java
+ -  Download and configure ansible dynamic inventory
+ -  Configure '~/.ssh/config' to 'StrictHostKeyChecking no'
+ -  Run Farrukh's Bash Script to create Terraform/AWS-EC2
+ -  Create Ansible Tower"
+
 
 #!/bin/bash
 rs=`tput sgr0`    # reset
@@ -15,7 +18,7 @@ b=`tput bold`     # bold
 u=`tput smul`     # underline
 nu=`tput rmul`    # no-underline
 echo "
-[${y}NOTE${rs}] Once the script is completed enter your AWS ACCESS KEYS into the /opt/ansible/inventory/aws_ec2.yml"
+[${y}NOTE${rs}] Once the script is completed place your AWS ACCESS KEYS into the /opt/ansible/inventory/aws_ec2.yml"
 
 echo #
 while true
