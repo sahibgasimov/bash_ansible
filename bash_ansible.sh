@@ -1,15 +1,6 @@
+#!/bin/bash
 # Ansible Script 
 
-echo "
-    What this script does?:
- -  Install ansible, python, java
- -  Download and configure ansible dynamic inventory
- -  Configure '~/.ssh/config' to 'StrictHostKeyChecking no'
- -  Run Farrukh's Bash Script to create Terraform/AWS-EC2
- -  Create Ansible Tower"
-
-
-#!/bin/bash
 rs=`tput sgr0`    # reset
 g=`tput setaf 2`  # green
 y=`tput setaf 3`  # yellow
@@ -17,6 +8,20 @@ r=`tput setaf 1`  # red
 b=`tput bold`     # bold
 u=`tput smul`     # underline
 nu=`tput rmul`    # no-underline
+
+echo ${g}"
+    What this script does?:
+    
+ -  Installs ansible, python, java
+ -  Download and configure ansible dynamic inventory
+ -  Configure '~/.ssh/config' to 'StrictHostKeyChecking no'
+ -  Run Farrukh's Bash Script to create Terraform/AWS-EC2
+ -  Create Ansible Tower
+    * Once you installed AWX, follow this doc to set up AWX with EC2 https://debugthis.dev/awx/2020-03-25-ansible-awx-aws-ec2-auto-discovery/
+ "${rs}
+
+
+
 echo "
 [${y}NOTE${rs}] Once the script is completed place your AWS ACCESS KEYS into the /opt/ansible/inventory/aws_ec2.yml"
 
@@ -24,7 +29,7 @@ echo #
 while true
 do
     echo "${y}1${rs}. Install ansible and terraform prerequisites "
-    echo "${y}2${rs}. Create aws_ec2.yml and ansible.cfg + hostkey_config"
+    echo "${y}2${rs}. Create aws inventory file & ansible config. Create hostkey_config No"
     echo "${y}3${rs}. Run Farrukh's Bash Script to create Terraform/AWS-EC2"
     echo "${y}4${rs}. Create Ansible Tower"
     echo "${y}5${rs}. Quit"
