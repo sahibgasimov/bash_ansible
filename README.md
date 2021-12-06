@@ -14,3 +14,4 @@
 	• When creating AWX it will error to launch CentOS subscription in AWS Marketplace,
 	follow the link in the error to activate subscription. 
 
+(c) Sahib Gasimov
