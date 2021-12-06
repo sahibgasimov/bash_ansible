@@ -81,13 +81,14 @@ EOF
     # Deleting original ansible.cfg in order to copy our own
 
         sudo mkdir -p /etc/ansible/ && cd /etc/ansible/
+        sudo chmod 777 /etc/ansible/
         sudo rm -rf /etc/ansible/ansible.cfg
         sudo rm -rf /etc/ansible/master.zip
         sudo rm -rf /etc/ansible/sgasimov-dotcom-jenkins-test-82a34e8
         curl -L -o /etc/ansible/master.zip  https://github.com/sgasimov-dotcom/jenkins-test/zipball/master/
         sleep 1
         sudo unzip -o /etc/ansible/master.zip
-        mv  sgasimov-dotcom-jenkins-test-82a34e8/ansible.cfg /etc/ansible/
+        sudo mv  sgasimov-dotcom-jenkins-test-82a34e8/ansible.cfg /etc/ansible/
         sudo rm -rf /etc/ansible/sgasimov-dotcom-jenkins-test-82a34e8
         sudo rm -rf /etc/ansible/master.zip
 
