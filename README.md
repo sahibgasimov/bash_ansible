@@ -14,4 +14,6 @@
 	• When creating AWX it will error to launch CentOS subscription in AWS Marketplace,
 	follow the link in the error to activate subscription. 
 
+The script will not break things when re-run multiple times (idempotent). 
+
 (c) Sahib Gasimov
