@@ -10,10 +10,9 @@
 ```
 # The only 2 things are not automated:
 ```python
-	• If you running this outside AWS env (for ex. digitalocean) then 
-	You still need to add AWS Access Keys to /opt/ansible/inventory/aws_ec2.yml once the folder will be created.
-	BUT If your ansible server is running inside the AWS environment, 
-	attach an ec2 instance role with the required AWS ec2 permissions, 
+	• If you running this outside AWS You still need to add AWS Access Keys 
+	to /opt/ansible/inventory/aws_ec2.yml once the folder will be created.
+	BUT if this is AWS environment, just attach required ec2 role, 
 	this way you don’t have to add the access and secret key in the configuration. 
 	Ansible will automatically use the attached role to make the AWS API calls.
 	
