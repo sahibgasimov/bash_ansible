@@ -30,7 +30,7 @@ while true
 do
     echo "${y}1${rs}. Install ansible and terraform prerequisites "
     echo "${y}2${rs}. Create aws inventory file & ansible config. Create hostkey_config No"
-    echo "${y}3${rs}. Run Farrukh's Bash Script to create Terraform/AWS-EC2"
+    echo "${y}3${rs}. Run Bash Script to create Terraform/AWS-EC2"
     echo "${y}4${rs}. Create Ansible Tower (AWX)"
     echo "${y}5${rs}. Quit"
     read -p "Enter your choice: " choice
