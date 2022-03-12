@@ -56,9 +56,9 @@ do
         sudo pip3 install boto3
     elif [ $choice -eq 2 ]
     then
-    # To make sure there is no other aws_ec2.yml file we first delete it
-        rm -rf aws_ec2.yml
-        cat << EOF > aws_ec2.yml
+    # To make sure there is no other prod_aws_ec2.yml file we first delete it
+        rm -rf prod_aws_ec2.yml
+        cat << EOF > prod_aws_ec2.yml
 ---
 plugin: aws_ec2
 regions:
@@ -71,11 +71,11 @@ keyed_groups:
     - key: tags
       prefix: tag
 EOF
-        sudo mv aws_ec2.yml /opt/ansible/inventory/
+        sudo mv prod_aws_ec2.yml /opt/ansible/inventory/
     if [ $? = 0 ]; then
-        echo "aws_ec2.yml  file is exported to /opt/ansible/inventory"
+        echo "prod_aws_ec2.yml  file is exported to /opt/ansible/inventory"
     else 
-        echo ${r}"aws_ec2.yml file is not READY"${rs}
+        echo ${r}"prod_aws_ec2.yml file is not READY"${rs}
     fi
 
     # Deleting original ansible.cfg in order to copy our own
