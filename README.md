@@ -3,7 +3,7 @@
   - Install ansible, python, java on your CentOS/Amazon Linux machine.
  -  Download and configure ansible dynamic inventory.
  -  Configure '~/.ssh/config' to 'StrictHostKeyChecking no'
- -  Run Bash Script to create Terraform/AWS-EC2.
+ -  Run Bash Script to create 3 Ubuntu and 3 Amazon-Linux EC2 VMs with Terraform.
  -  Create Ansible Tower (AWX).
     * Once you installed AWX, follow this doc to set up AWX with EC2:
     https://debugthis.dev/awx/2020-03-25-ansible-awx-aws-ec2-auto-discovery/
